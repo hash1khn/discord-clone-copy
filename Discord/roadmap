@@ -1,0 +1,33 @@
+ Feature Checklist vs. Roadmap
+Feature	Status in Roadmap
+User System	✅ Covered in Phase 1
+Unique @handle for users	✅ Covered in Phase 1
+Friend System (Add/Remove Friends)	✅ Covered in Phase 1
+Server/Forum System	✅ Covered in Phase 1
+Create & Manage Forums (Servers)	✅ Covered in Phase 1
+Assign Admins/Moderators	✅ Covered in Phase 1
+Search & Join Forums	✅ Covered in Phase 2
+Forum Communication	✅ Covered in Phase 1
+Create Posts & Threads (Forums)	✅ Covered in Phase 1
+Comments on Posts	✅ Covered in Phase 1
+Like/React to Posts	✅ Covered in Phase 2
+Chat System (Sectioned Chats)	✅ Covered in Phase 1
+Real-time Text Chat	✅ Covered in Phase 1 (Socket.io)
+File Sharing (Images, Docs)	✅ Covered in Phase 1
+Voice Notes (Record & Send)	✅ Covered in Phase 2
+Voice Rooms (Live Audio Chats)	✅ Covered in Phase 2 (WebRTC)
+Moderation & Admin Controls	✅ Covered in Phase 2
+Ban, Mute Users	✅ Covered in Phase 2
+Delete Messages/Posts	✅ Covered in Phase 2
+Search & Discovery	✅ Covered in Phase 2
+Discover New Forums	✅ Covered in Phase 2
+Search for Users by @handle	✅ Covered in Phase 2
+Notifications System	✅ Covered in Phase 2
+Mention Notifications	✅ Covered in Phase 2
+Message Notifications	✅ Covered in Phase 2
+Friend Request Notifications	✅ Covered in Phase 2
+Performance & Scalability	✅ Covered in Phase 3
+MongoDB Indexing & Query Optimization	✅ Covered in Phase 3
+Redis Caching (for faster chat & notifications)	✅ Covered in Phase 3
+Mobile Responsiveness (PWA Support)	✅ Covered in Phase 3
+Deployment (Vercel + Railway + MongoDB Atlas)	✅ Covered in Phase 3

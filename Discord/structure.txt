@@ -1,0 +1,89 @@
+project-root/
+├── client/                     # React frontend
+│   ├── public/
+│   │   ├── index.html
+│   │   └── assets/
+│   │       └── images/
+│   ├── src/
+│   │   ├── components/        # Reusable components
+│   │   │   ├── layout/
+│   │   │   │   ├── Sidebar.jsx
+│   │   │   │   ├── Navbar.jsx
+│   │   │   │   └── Footer.jsx
+│   │   │   ├── auth/
+│   │   │   │   ├── Login.jsx
+│   │   │   │   └── Register.jsx
+│   │   │   ├── servers/
+│   │   │   │   ├── ServerList.jsx
+│   │   │   │   ├── ServerCard.jsx
+│   │   │   │   └── CreateServer.jsx
+│   │   │   ├── chat/
+│   │   │   │   ├── ChatWindow.jsx
+│   │   │   │   ├── MessageList.jsx
+│   │   │   │   └── MessageInput.jsx
+│   │   │   └── common/
+│   │   │       ├── Button.jsx
+│   │   │       ├── Input.jsx
+│   │   │       └── Modal.jsx
+│   │   ├── pages/            # Page components
+│   │   │   ├── Home.jsx
+│   │   │   ├── Profile.jsx
+│   │   │   ├── ServerView.jsx
+│   │   │   └── Settings.jsx
+│   │   ├── context/          # React context
+│   │   │   ├── AuthContext.js
+│   │   │   └── SocketContext.js
+│   │   ├── hooks/            # Custom hooks
+│   │   │   ├── useAuth.js
+│   │   │   └── useSocket.js
+│   │   ├── services/         # API calls
+│   │   │   ├── api.js
+│   │   │   ├── authService.js
+│   │   │   └── serverService.js
+│   │   ├── utils/            # Helper functions
+│   │   │   ├── formatters.js
+│   │   │   └── validators.js
+│   │   ├── styles/           # CSS/SCSS files
+│   │   │   ├── global.css
+│   │   │   └── variables.css
+│   │   ├── App.jsx
+│   │   └── index.jsx
+│   ├── package.json
+│   └── vite.config.js        # Using Vite for faster development
+│
+├── server/                    # Node.js backend
+│   ├── config/
+│   │   ├── database.js       # MongoDB configuration
+│   │   └── socket.js         # Socket.io configuration
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── serverController.js
+│   │   ├── messageController.js
+│   │   └── userController.js
+│   ├── middlewares/
+│   │   ├── auth.js           # JWT authentication
+│   │   ├── error.js          # Error handling
+│   │   └── upload.js         # File upload handling
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Server.js
+│   │   ├── Message.js
+│   │   └── Channel.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── servers.js
+│   │   ├── messages.js
+│   │   └── users.js
+│   ├── services/
+│   │   ├── fileStorage.js    # File handling service
+│   │   └── socket.js         # Socket.io service
+│   ├── utils/
+│   │   ├── validators.js
+│   │   └── helpers.js
+│   ├── .env                  # Environment variables
+│   ├── package.json
+│   └── index.js             # Entry point
+│
+├── .gitignore
+├── README.md
+└── package.json             # Root package.json for common scripts
