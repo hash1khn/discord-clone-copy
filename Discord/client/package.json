@@ -5,8 +5,7 @@
   "description": "Simple Next & TypeScript",
   "private": true,
   "scripts": {
-   "dev": "next dev -p 8085",
-
+    "dev": "next dev -p 8085",
     "start": "next start",
     "build": "next build",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
@@ -32,7 +31,9 @@
     "framer-motion": "^10.15.1",
     "lodash": "^4.17.21",
     "next": "^13.4.13",
+    "notistack": "^3.0.2",
     "nprogress": "^0.2.0",
+    "numeral": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.4",
@@ -40,6 +41,7 @@
     "simplebar-react": "^3.2.4",
     "stylis": "^4.3.0",
     "stylis-plugin-rtl": "^2.1.1",
+    "yet-another-react-lightbox": "^3.21.8",
     "yup": "^1.2.0"
   },
   "devDependencies": {

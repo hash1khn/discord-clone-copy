@@ -1,85 +1,107 @@
 import { useMemo } from 'react';
-// routes
 import { paths } from 'src/routes/paths';
-// components
 import SvgColor from 'src/components/svg-color';
 
-// ----------------------------------------------------------------------
-
+// Define the icon function
 const icon = (name: string) => (
   <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
-  // OR
-  // <Iconify icon="fluent:mail-24-filled" />
-  // https://icon-sets.iconify.design/solar/
-  // https://www.streamlinehq.com/icons
 );
 
+// Define the ICONS object
 const ICONS = {
-  job: icon('ic_job'),
-  blog: icon('ic_blog'),
-  chat: icon('ic_chat'),
-  mail: icon('ic_mail'),
+  server: icon('ic_server'), // Add a server icon
+  chat: icon('ic_chat'), // Text channel icon
+  voice: icon('ic_speak'), // Voice channel icon
+  add: icon('ic_add'), // Add server icon
   user: icon('ic_user'),
-  file: icon('ic_file'),
-  lock: icon('ic_lock'),
-  tour: icon('ic_tour'),
-  order: icon('ic_order'),
-  label: icon('ic_label'),
-  blank: icon('ic_blank'),
-  kanban: icon('ic_kanban'),
-  folder: icon('ic_folder'),
-  banking: icon('ic_banking'),
-  booking: icon('ic_booking'),
-  invoice: icon('ic_invoice'),
-  product: icon('ic_product'),
-  calendar: icon('ic_calendar'),
-  disabled: icon('ic_disabled'),
-  external: icon('ic_external'),
-  menuItem: icon('ic_menu_item'),
-  ecommerce: icon('ic_ecommerce'),
-  analytics: icon('ic_analytics'),
-  dashboard: icon('ic_dashboard'),
 };
 
-// ----------------------------------------------------------------------
+// Define the props for useNavData
+interface UseNavDataProps {
+  handleAddServerClick?: () => void; // Make it optional
+}
 
-export function useNavData() {
+export function useNavData({ handleAddServerClick = () => {} }: UseNavDataProps = {}) {
   const data = useMemo(
     () => [
-      // OVERVIEW
-      // ----------------------------------------------------------------------
+      // HOME PAGE REDIRECT
       {
-        subheader: 'overview v5.4.0',
+        subheader: 'Home',
         items: [
-          { title: 'one', path: paths.dashboard.root, icon: ICONS.dashboard },
-          { title: 'two', path: paths.dashboard.two, icon: ICONS.ecommerce },
           {
-            title: 'three',
-            path: paths.dashboard.three,
-            icon: ICONS.analytics,
+            title: 'Home',
+            path: paths.dashboard.user.root, // Redirect to dashboard.path.one
+            icon: ICONS.user,
           },
         ],
       },
 
-      // MANAGEMENT
-      // ----------------------------------------------------------------------
+      // LIST OF SERVERS
       {
-        subheader: 'management',
+        subheader: 'Servers',
         items: [
           {
-            title: 'user',
-            path: paths.dashboard.group.root,
-            icon: ICONS.user,
+            title: 'Server 1',
+            path: paths.dashboard.one, // Root path for Server 1
+            icon: ICONS.server,
             children: [
-              { title: 'four', path: paths.dashboard.group.root },
-              { title: 'five', path: paths.dashboard.group.five },
-              { title: 'six', path: paths.dashboard.group.six },
+              {
+                title: 'Text Channels',
+                path: paths.dashboard.one, // Path for text channels
+                icon: ICONS.chat,
+                children: [
+                  { title: 'General', path: `${paths.dashboard.one}/general` }, // Chat 1
+                  { title: 'Random', path: `${paths.dashboard.one}/random` }, // Chat 2
+                  // Add more chats here
+                ],
+              },
+              {
+                title: 'Voice Channels',
+                path: paths.dashboard.one, // Path for voice channels
+                icon: ICONS.voice,
+              },
             ],
+          },
+          {
+            title: 'Server 2',
+            path: paths.dashboard.one, // Root path for Server 2
+            icon: ICONS.server,
+            children: [
+              {
+                title: 'Text Channels',
+                path: paths.dashboard.one, // Path for text channels
+                icon: ICONS.chat,
+                children: [
+                  { title: 'General', path: `${paths.dashboard.one}/general` }, // Chat 1
+                  { title: 'Random', path: `${paths.dashboard.one}/random` }, // Chat 2
+                  // Add more chats here
+                ],
+              },
+              {
+                title: 'Voice Channels',
+                path: paths.dashboard.one, // Path for voice channels
+                icon: ICONS.voice,
+              },
+            ],
+          },
+          // Add more servers here
+        ],
+      },
+
+      // ADD SERVER BUTTON
+      {
+        subheader: 'Add Server',
+        items: [
+          {
+            title: 'Add Server',
+            path: '#', // Use a placeholder path or handle via onClick
+            icon: ICONS.add,
+            onClick: handleAddServerClick, // Trigger the dialog
           },
         ],
       },
     ],
-    []
+    [handleAddServerClick] // Add handleAddServerClick as a dependency
   );
 
   return data;
